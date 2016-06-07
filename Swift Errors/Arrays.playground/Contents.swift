@@ -39,9 +39,11 @@ b
 // public func flatMap(transform: Int -> [Int]) -> [Int]
 let c = [1, 2, 3].flatMap { [$0] }
 c
+
 let dict = [1:["San Francisco"], 2:["Columbia", "Annapolis", "Washinton D.C."], 3:["Nashville", "Knoxvile"]]
 let d = [1, 2, 3].flatMap { dict[$0]! }
 d
+d.dynamicType
 
 // transform: [Int] -> [Int]
 // public func flatMap(transform: [Int] -> [Int]) -> [Int]
@@ -50,14 +52,14 @@ e
 
 // transform: Int -> Int
 // public func flatMap(transform: Int -> Int) -> [Int]
-let f = [1, 2, 3].flatMap { 2*$0 }
+let f = [1, 2, 3].flatMap { 2 * $0 }
 f
 
 // transform: Int -> Int
 // public func flatMap(transform: AnyObject -> AnyObject) -> [AnyObject]
 let g = [[1, 2], 3].flatMap { $0 }
 g
-
+g.dynamicType
 
 // only maps one layer
 // transform: [[Int]] -> [[Int]]
@@ -74,3 +76,23 @@ i
 
 let j = [1, 2, 3, 4].flatMap { dict[$0] }.flatMap { $0 }
 j
+
+
+// flatMap implemetation
+extension Array {
+    func myFlatMap<U>(@noescape f: Element -> [U]) -> [U] {
+        var r = Array<U>()
+        for e in self {
+            r += f(e)
+        }
+        return r
+    }
+    func myMap<U>(@noescape f: Element -> U) -> [U] {
+        var r = Array<U>()
+        for e in self {
+            r.append(f(e))
+        }
+        return r
+    }
+
+}
