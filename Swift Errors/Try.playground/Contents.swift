@@ -3,68 +3,46 @@ import Foundation
 public enum Try<T> {
 
     case Success(T)
-    case Failure(NSError)
+    case Failure(ErrorType)
 
     public init(_ value:T) {
         self = .Success(value)
     }
 
-    public init(_ error: NSError) {
+    public init(_ error: ErrorType) {
         self = .Failure(error)
     }
 
-    public func isSuccess() -> Bool {
-        switch self {
-        case .Success:
-            return true
-        case .Failure:
-            return false
-        }
-    }
-
-    public func isFailure() -> Bool {
-        switch self {
-        case .Success:
-            return false
-        case .Failure:
-            return true
-        }
-    }
-
-    public func map<M>(mapping: T -> M) -> Try<M> {
+    public func map<M>(@noescape mapping: T throws -> M) -> Try<M> {
         switch self {
         case .Success(let value):
-            return Try<M>(mapping(value))
+            do {
+                return try Try<M>(mapping(value))
+            } catch {
+                return Try<M>(error)
+            }
         case .Failure(let error):
             return Try<M>(error)
         }
     }
 
-    public func flatMap<M>(mapping: T -> Try<M>) -> Try<M> {
+    public func flatMap<M>(@noescape mapping: T throws -> Try<M>) -> Try<M> {
         switch self {
         case .Success(let value):
-            return mapping(value)
+            do {
+                return try mapping(value)
+            } catch {
+                return Try<M>(error)
+            }
         case .Failure(let error):
             return Try<M>(error)
         }
     }
 
-    public func toOptional() -> Optional<T> {
-        switch self {
-        case .Success(let value):
-            return Optional<T>(value)
-        case .Failure(_):
-            return Optional<T>()
-        }
-    }
-
-    public func getOrElse(failed: T) -> T {
-        switch self {
-        case .Success(let value):
-            return value
-        case .Failure(_):
-            return failed
-        }
-    }
-    
 }
+
+enum ExampleError : ErrorType {
+    case Failed, ReallyFailed
+}
+
+

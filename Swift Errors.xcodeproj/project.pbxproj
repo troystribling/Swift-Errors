@@ -6,6 +6,10 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		05585B8E1D04009A000F5307 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05585B8D1D04009A000F5307 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		05585B6E1D02A5D5000F5307 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,6 +34,7 @@
 		05585B8A1D02A6B5000F5307 /* Optional.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Optional.playground; sourceTree = "<group>"; };
 		05585B8B1D02AB1C000F5307 /* Try.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Try.playground; sourceTree = "<group>"; };
 		05585B8C1D02AFFB000F5307 /* Arrays.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Arrays.playground; sourceTree = "<group>"; };
+		05585B8D1D04009A000F5307 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 		05585B501D02A5D4000F5307 = {
 			isa = PBXGroup;
 			children = (
+				05585B8D1D04009A000F5307 /* Default-568h@2x.png */,
 				05585B5B1D02A5D4000F5307 /* Swift Errors */,
 				05585B5A1D02A5D4000F5307 /* Products */,
 			);
@@ -189,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05585B8E1D04009A000F5307 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +423,7 @@
 				05585B831D02A5D5000F5307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05585B841D02A5D5000F5307 /* Build configuration list for PBXNativeTarget "Swift ErrorsTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +432,7 @@
 				05585B861D02A5D5000F5307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05585B871D02A5D5000F5307 /* Build configuration list for PBXNativeTarget "Swift ErrorsUITests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +441,7 @@
 				05585B891D02A5D5000F5307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
