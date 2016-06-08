@@ -22,11 +22,11 @@ import Foundation
     "value = \(2*v)"
 }
 
-let a = [1, 2, 3].map { "value = \(2*$0)"}
+let a = [1, 2, 3].map { "value = \(2 * $0)"}
 a
 
 // map combinator
-let b = [1, 2, 3].map { 2*$0 }.map{ 3*$0 }
+let b = [1, 2, 3].map { 2*$0 }.map{ 3 * $0 }
 b
 
 // 
@@ -76,7 +76,6 @@ i
 
 let j = [1, 2, 3, 4].flatMap { dict[$0] }.flatMap { $0 }
 j
-
 
 // flatMap implemetation
 extension Array {
