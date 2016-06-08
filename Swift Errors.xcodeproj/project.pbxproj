@@ -36,6 +36,7 @@
 		05585B8C1D02AFFB000F5307 /* Arrays.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Arrays.playground; sourceTree = "<group>"; };
 		05585B8D1D04009A000F5307 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		05585BC91D071675000F5307 /* Reduce.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Reduce.playground; sourceTree = "<group>"; };
+		581F0F001D077C1D00C5DC11 /* Messages.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Messages.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +90,7 @@
 				05585B8B1D02AB1C000F5307 /* Try.playground */,
 				05585B8C1D02AFFB000F5307 /* Arrays.playground */,
 				05585BC91D071675000F5307 /* Reduce.playground */,
+				581F0F001D077C1D00C5DC11 /* Messages.playground */,
 			);
 			path = "Swift Errors";
 			sourceTree = "<group>";

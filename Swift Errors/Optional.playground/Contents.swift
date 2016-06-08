@@ -34,20 +34,29 @@ func test2(val: Int?) -> Int? {
 // public func flatMap<U>(@noescape f: (Wrapped) throws -> U?) rethrows -> U?
 let message: [String: AnyObject] = ["val1": Int(1), "val2": Double(3)]
 
+// map optional return
 let g = message["val1"].map { $0 as? Int }
 g
 g.dynamicType
 
+// flatmap success
 let h = message["val1"].flatMap { $0 as? Int }
 h
 h.dynamicType
 
+// flatmap nil
 let i = message["val2"].flatMap { $0 as? String }
 i
 
+// replaces
 if let val = message["val1"], intVal = val as? Int {
     print(intVal)
 }
+
+// Dictionary example
+let dictionaries: [[String: AnyObject]] = [["status": UInt(2)]]
+let j = dictionaries.first.flatMap { $0["status"] }.flatMap { $0 as? UInt }
+j
 
 // Implementaion
 public extension Optional {
@@ -71,4 +80,3 @@ public extension Optional {
     }
 }
 
-// 
